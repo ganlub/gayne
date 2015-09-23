@@ -4,6 +4,10 @@
     @include clearfix();
     background-color: white;
     z-index: 3;
+    
+    div {
+    	display: inline-block;
+    }
 }
 
 .navbar-fixed {
@@ -11,4 +15,30 @@
     right: 0;
     left: 0;
     top: 0;
+}
+
+.navbar-menu {
+
+}
+
+.menu {
+	list-style: none;
+}
+
+.menu-item {
+	display: inline-block;
+}
+
+.submenu-head {
+	&:hover {
+		.submenu {
+			display: block;
+		}
+	}
+}
+
+.submenu {
+	display: none;
+	position: absolute;
+	list-style: none;
 }
