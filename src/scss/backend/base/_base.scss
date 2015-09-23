@@ -1,0 +1,80 @@
+@import "../settings";
+
+//
+// HTML
+//
+
+html {
+  min-height: 100%; /* 1 */
+  overflow-y: scroll; /* 2 */
+}
+
+//
+// Body
+//
+
+body {
+  background: $body-bg;
+  color: $body-font-color;
+  cursor: $cursor-auto-value;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100%;
+}
+
+
+* {
+  @include selection {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+
+//
+//  box-sizing model
+//
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+//
+//  Basic style tricks
+//
+
+a:hover { cursor: $cursor-pointer-value; }
+img { max-width: 100%; height: auto; }
+img { -ms-interpolation-mode: bicubic; }
+
+// Get rid of gap under images by making them display: inline-block; by default
+img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// Hide visually and from screen readers
+.hide {
+  display: none;
+}
+
+// Hide visually and from screen readers, but maintain layout
+.invisible { visibility: hidden; }
+
+
+// Antialiased font smoothing works best for light text on a dark background.
+.antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+// Make sure textarea takes on height automatically
+textarea { height: auto; min-height: 50px; }
+
+// Make select elements 100% width by default
+select { width: 100%; }

@@ -1,0 +1,42 @@
+/// Outputs the spec and prefixed versions of the `::selection` pseudo-element.
+/// @param {Bool} $current-selector [false] - If set to `true`, it takes the current element into consideration.
+///
+/// @example scss - Usage
+///   .element {
+///     @include selection(true) {
+///       background-color: #ffbb52;
+///     }
+///   }
+///
+/// @example css - CSS Output
+///   .element::-moz-selection {
+///     background-color: #ffbb52;
+///   }
+///
+///   .element::selection {
+///     background-color: #ffbb52;
+///   }
+
+@mixin selection($current-selector: false) {
+  @if $current-selector {
+    &::selection {
+      @content;
+    }
+  } @else {
+    ::selection {
+      @content;
+    }
+  }
+}
+
+/// Controls the appearance (only) of selection. This does not have any affect on actual selection operation.
+/// @param {Map} $value [none] - Values: none, text, all, element
+@mixin user-select($value: none) {
+  user-select: $value;
+}
+
+/// Helper to clear inner floats
+@mixin clearfix {
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
