@@ -1,9 +1,12 @@
 {
   "devDependencies": {
     "browser-sync": "^2.7.13",
+    "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",
-    "gulp-sass": "^2.0.4"
+    "gulp-sass": "^2.0.4",
+    "gulp-size": "^2.0.0",
+    "run-sequence": "^1.1.4"
   },
   "engines": {
     "node": ">=0.10.0"

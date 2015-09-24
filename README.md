@@ -1,5 +1,5 @@
-# GAYne
-GAYne bla bla bla...
+# Gayne
+Gayne bla bla bla...
 
 Quick start
 -----------
