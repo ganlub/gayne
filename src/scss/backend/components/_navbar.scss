@@ -1,44 +1,62 @@
 .navbar {
-    position: relative;
-    padding: $rem-base;
-    @include clearfix();
-    background-color: white;
-    z-index: 3;
+	@include clearfix();
+  background-color: white;
+	padding: $rem-base;
+	position: relative;
+  z-index: 3;
 
-    div {
-    	display: inline-block;
-    }
-}
+  .nav {
+    padding: 0;
+  }
 
-.navbar-fixed {
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 0;
-}
-
-.navbar-menu {
-
-}
-
-.menu {
-	list-style: none;
-}
-
-.menu-item {
-	display: inline-block;
-}
-
-.submenu-head {
-	&:hover {
-		.submenu {
-			display: block;
-		}
+	.nav-item {
+		float: left;
 	}
 }
 
-.submenu {
-	display: none;
-	position: absolute;
-	list-style: none;
+.navbar-fixed {
+  left: 0;
+	position: fixed;
+  top: 0;
 }
+
+.navbar-brand {
+  @extend %nav-link;
+  float: left;
+
+  &:focus,
+  &:hover {
+    background-color: none;
+    color: none;
+    text-decoration: none;
+  }
+}
+
+.submenu {
+	display: none; // FIXME: tot teu ;)
+}
+// .navbar-menu {
+//
+// }
+//
+// .menu {
+// 	list-style: none;
+// }
+//
+// .menu-item {
+// 	display: inline-block;
+// }
+//
+// .submenu-head {
+// 	&:hover {
+// 		.submenu {
+// 			display: block;
+// 		}
+// 	}
+// }
+//
+// .submenu {
+// 	display: none;
+// 	position: absolute;
+// 	list-style: none;
+// }
