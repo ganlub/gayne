@@ -37,3 +37,6 @@ pids
 .grunt
 .lock-wscript
 build/Release
+
+# CUSTOM
+/dist
