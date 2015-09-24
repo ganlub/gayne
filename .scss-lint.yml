@@ -1,0 +1,7 @@
+exclude: 'src/scss/gayne/vendors/**'
+
+linters:
+    SelectorFormat:
+        enabled: false
+    Comment:
+        enabled: false
