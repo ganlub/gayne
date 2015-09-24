@@ -1,1 +1,34 @@
-_label.scss
+@import '../settings';
+
+.badge {
+  background-color: $grey;
+  border-radius: 3px;
+  color: $black;
+  padding: 3px 7px;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.badge-primary {
+  background-color: $green-light;
+  color: $white;
+}
+
+.badge-secondary {
+  background-color: $blue-light;
+  color: $white;
+}
+
+.badge-rounded {
+  border-radius: 10px;
+}
+
+.badge-lg {
+  font-size: 20px;
+}
+
+.badge-sm {
+  font-size: 10px;
+}

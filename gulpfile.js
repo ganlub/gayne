@@ -24,6 +24,10 @@ var files = {
     fonts: {
         src: 'src/fonts/**/*',
         dist: 'dist/fonts/'
+    },
+    assets: {
+        src: 'src/assets/**/*',
+        dist: 'dist/assets/'
     }
 };
 
@@ -63,6 +67,11 @@ gulp.task('fonts', function () {
   return gulp.src(files.fonts.src)
     .pipe(gulp.dest(files.fonts.dist));
 });
+// Copy assets to dist
+gulp.task('assets', function () {
+  return gulp.src(files.assets.src)
+    .pipe(gulp.dest(files.assets.dist));
+});
 
 gulp.task('watch', function() {
     browserSync.init({
@@ -80,5 +89,5 @@ gulp.task('watch', function() {
 
 
 gulp.task('default', ['watch'], function(cb) {
-    runSequence('clean', 'fonts', 'styles', cb);
+    runSequence('clean', 'fonts', 'styles', 'assets', cb);
 });

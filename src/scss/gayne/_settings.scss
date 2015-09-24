@@ -40,16 +40,20 @@ $cursor-text-value: text !default;
 
 $white        : #FFFFFF !default;
 $black        : #000000 !default;
-$red          : #f04124 !default;
-$green        : #43AC6A !default;
+$green-light  : #80C8BD !default;
+$green-dark   : #44877D !default;
+$blue-light   : #788F9A !default;
+$blue-dark	  : #4B616C !default;
+$yellow		  : #F8DE7A !default;
+$grey         : #e4eaec !default;//#F8F9FB !default;
+$grey-green   : #EBF6F0 !default;
+$red          : #F04D2C !default;
 $orange       : #f08a24 !default;
-$blue-light   : #a0d3e8 !default;
-$grey         : #222222 !default;
 
 $primary-color: $black !default;
 $secondary-color: $white !default;
 $alert-color: $red !default;
-$success-color: $green !default;
+$success-color: $green-light !default;
 $warning-color: $orange !default;
 $info-color: $blue-light !default;
 
