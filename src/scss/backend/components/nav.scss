@@ -1,10 +1,5 @@
-.sidebar {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-%sidebar-menu,
-.sidebar-menu {
+%nav-sidebar,
+.nav-sidebar {
   padding: 10px 0;
   border-radius: 4px;
   list-style: none;
@@ -13,18 +8,18 @@
   margin-top: 30px;
 }
 
-.sidebar-submenu {
-  @extend %sidebar-menu;
+.nav-sidebar-submenu {
+  @extend %nav-sidebar;
   margin-top: 0;
   margin-left: 0 !important;
 
-  .sidebar-link {
+  .nav-link {
     padding: .55rem 1.25rem .55rem 2.5rem;
 
   }
 }
 
-.sidebar-link {
+.nav-link {
   display: block;
   padding: .75rem 1.25rem;
   color: #485a6a;
@@ -38,16 +33,16 @@
   }
 }
 
-.sidebar-item {
+.nav-item {
 
 }
 
-.sidebar-link.active {
+.nav-link.active {
   background-color: #f2f6f9;
   color: #46be8a;
 }
 
-.sidebar-item.open > .sidebar-link {
+.nav-item.open > .nav-link {
   background-color: #f2f6f9;
   color: #46be8a;
   border-left: 3px solid #46be8a !important;

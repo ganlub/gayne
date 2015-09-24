@@ -5,6 +5,8 @@ var gulp = require('gulp'),
     del = require('del'),
     size = require('gulp-size'),
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    minifyCss = require('gulp-minify-css'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create();
 
@@ -25,10 +27,6 @@ var files = {
     }
 };
 
-var sassOptions = {
-    outputStyle: 'compact'
-};
-
 var autoprefixerOptions = [
   'ie >= 10',
   'ie_mob >= 10',
@@ -47,8 +45,11 @@ var autoprefixerOptions = [
 gulp.task('styles', function () {
     return gulp
         .src(files.sass.src)
-        .pipe(sass(sassOptions).on('error', sass.logError))
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer(autoprefixerOptions)) //autoprefixer
+        // .pipe(minifyCss())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(files.sass.dist))
         .pipe(browserSync.stream());
 });

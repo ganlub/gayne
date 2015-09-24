@@ -32,7 +32,7 @@
 
 // Creates rows
 @mixin grid-row($type: false) {
-	
+
   @if $type == nest {
     margin: 0 (-($column-gutter/2));
     max-width: none;
@@ -48,7 +48,7 @@
     // max-width: $row-width;
     width: 100%;
   }
-  
+
 	@include clearfix;
 }
 
@@ -117,6 +117,36 @@
   }
 }
 
+@mixin visibility-for($size, $breakpoint-only, $breakpoint-up) {
+
+    .visible-for-#{$size}-only {
+        @media #{$breakpoint-only} {
+            display: inherit !important;
+        }
+        display: none !important;
+    }
+
+    .visible-for-#{$size}-up {
+        @media #{$breakpoint-up} {
+            display: inherit !important;
+        }
+        display: none !important;
+    }
+
+    .hide-for-#{$size}-only {
+        @media #{$breakpoint-only} {
+            display: none !important;
+        }
+        display: inherit !important;
+    }
+
+    .hide-for-#{$size}-up {
+        @media #{$breakpoint-up} {
+            display: none !important;
+        }
+        display: inherit !important;
+    }
+}
 
 .container {
   @include make-container;
@@ -128,16 +158,16 @@
 
 .row {
 	@include grid-row;
-  
+
   &.collapse {
     > .column,
     > .columns { @include grid-column($collapse:true, $float:false); }
 
     .row {margin-left:0; margin-right:0;}
   }
-  
-  .row { 
-    @include grid-row($type:nest); 
+
+  .row {
+    @include grid-row($type:nest);
     &.collapse { @include grid-row($type:nest-collapse); }
   }
 }
@@ -157,26 +187,25 @@
   }
 }
 
+@include visibility-for(small, $small-only, $small-up);
 @media #{$small-up} {
   @include grid-sizes($size:small);
 }
 
+@include visibility-for(medium, $medium-only, $medium-up);
 @media #{$medium-up} {
   @include grid-sizes($size:medium);
 }
 
+@include visibility-for(large, $large-only, $large-up);
 @media #{$large-up} {
   @include grid-sizes($size:large);
 }
-
+@include visibility-for(xlarge, $xlarge-only, $xlarge-up);
 @media #{$xlarge-up} {
   @include grid-sizes($size:xlarge);
 }
-
+@include visibility-for(xxlarge, $xxlarge-only, $xxlarge-up);
 @media #{$xxlarge-up} {
   @include grid-sizes($size:xxlarge);
 }
-
-
-
-

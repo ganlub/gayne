@@ -23,8 +23,6 @@ Temporary Items
 
 # SASS
 .sass-cache
-*.css.map
-*.css
 
 # Bower
 bower_components
