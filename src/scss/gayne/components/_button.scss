@@ -3,7 +3,7 @@
 .btn {
 	border: 0;
 	cursor: $cursor-pointer-value;
-	line-height: $button-font-weight;
+	font-weight: $button-font-weight;
 	margin: 10px 0;
 	padding: $button-vertical-padding $button-horizontal-padding;
 	text-align: center;
