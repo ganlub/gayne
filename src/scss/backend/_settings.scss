@@ -230,3 +230,15 @@ $row-width: rem(1280);
 $total-columns: 12;
 $column-gutter: rem(30);
 $last-child-float: $opposite-direction !default;
+
+
+//
+// Button
+//
+
+$button-vertical-padding: 4px;
+$button-horizontal-padding: 10px;
+$button-default-color: #f2f6f9;
+$button-primary-color: #46be8a;
+$button-secondary-color: #fff;
+$button-secondary-border-color: #46be8a;

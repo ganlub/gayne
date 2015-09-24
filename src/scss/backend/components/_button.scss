@@ -1,0 +1,29 @@
+@import '../settings';
+
+.btn {
+	padding: $button-vertical-padding $button-horizontal-padding;
+	border: none;
+	margin: 10px 0px 10px 0px;
+}
+
+.btn-default {
+	background-color: $button-default-color;
+}
+
+.btn-primary {
+	background-color: $button-primary-color;
+}
+
+.btn-bordered {
+	background-color: $button-secondary-color;
+	border: solid 2px $button-secondary-border-color;
+}
+
+.btn-rounded {
+	border-radius: 4px;
+}
+.btn-wide {
+	width: 90%;
+	margin: 0 auto;
+	display: block;
+}
