@@ -117,34 +117,17 @@
   }
 }
 
-@mixin visibility-for($size, $breakpoint-only, $breakpoint-up) {
-
-    .visible-for-#{$size}-only {
-        @media #{$breakpoint-only} {
-            display: inherit !important;
-        }
+@mixin visibility-for($size, $breakpoint) {
+    .hide-for-#{$size}-down {
+      @media (max-width: #{$breakpoint}) {
         display: none !important;
-    }
-
-    .visible-for-#{$size}-up {
-        @media #{$breakpoint-up} {
-            display: inherit !important;
-        }
-        display: none !important;
-    }
-
-    .hide-for-#{$size}-only {
-        @media #{$breakpoint-only} {
-            display: none !important;
-        }
-        display: inherit !important;
+      }
     }
 
     .hide-for-#{$size}-up {
-        @media #{$breakpoint-up} {
-            display: none !important;
-        }
-        display: inherit !important;
+			@media (max-width: #{$breakpoint}) {
+				display: none !important;
+			}
     }
 }
 
@@ -187,25 +170,36 @@
   }
 }
 
-@include visibility-for(small, $small-only, $small-up);
-@media #{$small-up} {
-  @include grid-sizes($size:small);
-}
 
-@include visibility-for(medium, $medium-only, $medium-up);
-@media #{$medium-up} {
-  @include grid-sizes($size:medium);
-}
+@include breakpoint-up(xsmall) {
+	@include grid-sizes(xsmall);
+};
 
-@include visibility-for(large, $large-only, $large-up);
-@media #{$large-up} {
-  @include grid-sizes($size:large);
-}
-@include visibility-for(xlarge, $xlarge-only, $xlarge-up);
-@media #{$xlarge-up} {
-  @include grid-sizes($size:xlarge);
-}
-@include visibility-for(xxlarge, $xxlarge-only, $xxlarge-up);
-@media #{$xxlarge-up} {
-  @include grid-sizes($size:xxlarge);
+@include breakpoint-up(small) {
+	@include grid-sizes(small);
+};
+
+@include breakpoint-up(medium) {
+	@include grid-sizes(medium);
+};
+
+@include breakpoint-up(large) {
+	@include grid-sizes(large);
+};
+
+@include breakpoint-up(xlarge) {
+	@include grid-sizes(xlarge);
+};
+
+@each $sizes in map-keys($breakpoint-sizes) {
+  .hidden-#{$sizes}-up {
+    @include breakpoint-up($sizes) {
+      display: none !important;
+    }
+  }
+  .hidden-#{$sizes}-down {
+    @include breakpoint-down($sizes) {
+      display: none !important;
+    }
+  }
 }

@@ -73,7 +73,7 @@ h4 { font-size: $h4-font-size - $h4-font-reduction; }
 h5 { font-size: $h5-font-size - $h5-font-reduction; }
 h6 { font-size: $h6-font-size - $h6-font-reduction; }
 
-@media #{$medium-up} {
+@media (max-width: $medium-breakpoint) {
   h1, h2, h3, h4, h5, h6 { line-height: $header-line-height; }
   h1 { font-size: $h1-font-size; }
   h2 { font-size: $h2-font-size; }

@@ -39,3 +39,15 @@
   }
   @return nth($range, 2);
 }
+
+// Name the next breakpoint, or null if last.
+@function breakpoint-next($name, $breakpoints: $breakpoint-sizes, $breakpoint-names: map-keys($breakpoints)) {
+  $index: index($breakpoint-names, $name);
+  @return if($index < length($breakpoint-names), nth($breakpoint-names, $index + 1), null);
+}
+
+// Minimum breakpoint width. Null for the smallest 
+@function breakpoint-min($name, $breakpoints: $breakpoint-sizes) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
