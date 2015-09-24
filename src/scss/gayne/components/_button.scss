@@ -1,9 +1,37 @@
 @import '../settings';
 
 .btn {
+	border: 0;
+	cursor: $cursor-pointer-value;
+	line-height: $button-font-weight;
+	margin: 10px 0;
 	padding: $button-vertical-padding $button-horizontal-padding;
-	border: none;
-	margin: 10px 0px 10px 0px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+
+	@include user-select();
+
+	//firefox inner focus border
+	&::-moz-focus-inner {
+    border: 0;
+		padding: 0;
+	}
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:active {
+		outline: 0;
+	}
+
+	&[disabled],
+	&.disabled {
+		cursor: $cursor-disabled-value;
+		opacity: .40;
+	}
 }
 
 .btn-default {
@@ -20,8 +48,9 @@
 }
 
 .btn-rounded {
-	border-radius: 4px;
+	border-radius: $global-radius;
 }
+
 .btn-wide {
 	width: 90%;
 	margin: 0 auto;
