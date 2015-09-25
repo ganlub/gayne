@@ -1,4 +1,4 @@
-exclude: 'src/scss/gayne/vendors/**'
+exclude: 'src/scss/gayne/vendors/*'
 
 linters:
     SelectorFormat:

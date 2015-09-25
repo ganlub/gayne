@@ -5,6 +5,7 @@
 
 // Vendors
 @import 'gayne/vendors/font-awesome/font-awesome';
+@import 'gayne/vendors/bootstrap/bootstrap'; //grid system only
 
 // Utils
 @import 'gayne/utils/functions';
@@ -16,7 +17,6 @@
 @import 'gayne/base/typography';
 
 // Components
-@import 'gayne/components/grid';
 @import 'gayne/components/nav';
 @import 'gayne/components/navbar';
 @import 'gayne/components/card';

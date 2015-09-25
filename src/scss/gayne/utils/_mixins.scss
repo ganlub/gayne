@@ -40,29 +40,3 @@
   &:before, &:after { content: " "; display: table; }
   &:after { clear: both; }
 }
-
-// Media of the minimum breakpoint width. No query for the smallest.
-@mixin breakpoint-up($name, $breakpoints: $breakpoint-sizes) {
-	$min: breakpoint-min($name, $breakpoints);
-	@if $min  {
-		@media (min-width: $min) {
-      @content;
-    }
-	} @else {
-		@content;
-	}
-}
-
-// Max breakpoint width. Null for the largest.
-@mixin breakpoint-down($name, $breakpoints: $breakpoint-sizes) {
-	$next: breakpoint-next($name, $breakpoints);
-	$max: if($next, breakpoint-min($next, $breakpoints) - 0.1, null);
-	@if $max {
-		@media (max-width: $max) {
-			@content;
-		}
-	} @else {
-		@content;
-	}
-
-}
